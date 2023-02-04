@@ -1,0 +1,145 @@
+// APP HEADER STYLES
+.app__header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - $navbarWidth);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    @include respond(tablet) { width: 100%; }
+
+    background-color: $color-blue;
+    z-index: 990;
+}
+
+// APP NAVBAR STYLES
+.app__nav {
+    width: calc(100% - $drawerWidth);
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top-right-radius: $borderRadius;
+
+    /* NAVBAR OPTIONS STYLES */
+    &--options {
+        // width: 280px;
+        // width: 55%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        * { color: #eee; }
+    }
+
+    &--notifications { 
+        margin-right: 1.5rem;
+
+        & .notification--alert {
+            &.alert-poper {
+                
+                & span {
+                    backface-visibility: hidden;
+                    animation: notico .8s ease;
+                }
+
+                & .bell-poper {
+                    backface-visibility: hidden;
+                    animation: alertico .8s ease;
+                    // margin-right: -.5px;
+                }
+            }
+        }
+    }
+
+    /* NAVBAR PROFILE STYLES */
+    &--profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        /* PROFILE PHOTO STYLES */
+        &-photo { margin-right: .5rem; }
+
+        /* PROFILE NAME STYLES */
+        &-name {
+            display: inline-block;
+            font-weight: 500;
+            font-size: .8rem;
+            letter-spacing: 0.007em;
+            padding: 0 .5rem;
+        }
+
+        /* NAVBAR PROFILE OPTIONS 4 CLIENT */
+
+        & .profile__options {
+            margin: 0 !important;
+            background-color: rgba($color: $white, $alpha: .1);
+        }
+    }
+}
+
+.profile__options--menu {
+    & div:nth-of-type(3) {
+        background-color: $white !important;
+        & ul {
+            background-color: rgba($color: $color-blue, $alpha: .05);
+            padding: .5rem 0;
+            & li {
+                height: 100% !important;
+                padding: 1;
+                color: $color-blue;
+                font-size: $normalSize;
+
+                & svg {
+                    font-size: 20px;
+                    fill: $color-blue;
+                }
+            }
+
+            hr {
+                background-color: rgba($color: $color-blue, $alpha: .2);
+            }
+        }
+    }
+}
+
+@keyframes alertico {
+    0% {    
+        transform: rotate(-14deg);
+    }
+
+    25% {
+        transform: rotate(14deg);
+    }
+
+    50% {
+        transform: rotate(-14deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes notico {
+    0% {    
+        background-color: $color-orange;
+    }
+    
+    25% {
+        background-color: $color-orange-2;
+    }
+
+    50% {
+        background-color: $color-red;
+    }
+
+    100% {
+        background-color: #ed6d03;
+    }
+}

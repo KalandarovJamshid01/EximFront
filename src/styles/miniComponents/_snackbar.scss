@@ -1,0 +1,64 @@
+.snackbar-app {
+    
+    & .css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root {
+        background-color: $white;
+        border-radius: $borderRadius;
+        padding: 0 8px;
+    }
+
+    
+    &__content {
+        border-top-left-radius: 4px !important;
+        border-bottom-left-radius: 4px !important;
+        border-left: 4px solid $color-blue;
+        // & div { border-radius: initial; }
+        padding: 2px 0 5px 10px;
+
+        &--header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 25px;
+
+            & h4 {
+                font-size: $staticSize;
+                color: $color-black;
+                font-weight: $middleWeight;
+            }
+
+            & button {
+                @include transition2s(background);
+                &:hover {
+                    background-color: rgba($color: $color-blue, $alpha: .1);
+                }
+
+                & svg {
+                    fill: $color-blue;
+                }
+            }
+        }
+
+        &.snackbar--danger { 
+            border-left-color: #e45454;
+            & .button--danger {
+                &:hover { background-color: rgba($color: $color-danger, $alpha: .1); }
+                & svg { fill: $color-danger; }
+            }
+        }
+        &.snackbar--success { 
+            border-left-color: #219652; 
+            & .button--success {
+                &:hover { background-color: rgba($color: $color-success-dark, $alpha: 0.1); }
+                & svg { fill: $color-success-dark; }
+            }
+        }
+
+        &--message {
+            width: 90%;
+            & p {
+                font-size: $normalSize;
+                color: #a0a09f;
+            }
+        }
+    }
+}

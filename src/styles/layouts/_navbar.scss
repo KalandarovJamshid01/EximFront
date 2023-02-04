@@ -1,0 +1,155 @@
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: $white;
+    box-shadow: -9px -12px 51px -27px rgb(131, 131, 131);
+
+    &__appbar {
+        padding: .5rem 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #F6F6F6;
+
+        @include respond(tablet) {
+            display: block;
+            padding: 1rem 3rem;
+        }
+
+        &--right {
+            display: flex;
+            align-items: center;
+            width: 600px;
+            animation-name: moveInLeft;
+            animation-duration: .9s;
+            animation-timing-function: ease-out;
+        }
+
+        &--left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 440px;
+            animation-name: moveInRight;
+            animation-duration: .9s;
+            animation-timing-function: ease-out;
+            
+            @include respond(tablet) {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+
+        & .appbar {
+
+            &__logo {
+                height: 80px; //51
+                width: 155px; //92
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url(../../../public/assets/pictures/EximSoftware.svg);
+                border-right: 1px solid #F6F6F6;
+                cursor: pointer;
+            }
+
+            &__title {
+                margin-left: .6rem;
+                width: 385px;
+                font-size: $staticSize;
+                text-transform: uppercase;
+                font-weight: $middleWeight;
+                color: $color-blue;
+
+                &--name {
+                    font-weight: 500;
+                }
+            }
+    
+            &__contacts {
+                // width: 200px;
+                display: flex;
+                align-items: center;
+    
+                &--icon {
+                    background-color: $color-orange;
+                    @include transition3s(background);
+                    padding: .5rem;
+                    height: 45px;
+                    width: 45px;
+
+                    & svg { fill: $white; }
+                    &:hover { background-color: rgba($color: $color-orange, $alpha: .9); }
+                }
+    
+                &--details {
+                    margin-left: .5rem;
+                    & h5, & h4 { font-weight: $middleWeight; }
+
+                    & h5 { color: $color-blue-light; }
+                    & h4 { color: $color-blue; }
+                }
+            }
+    
+            &__auth {
+                & button {
+                    background-color: $color-blue;
+                    border-radius: $borderRadius20 !important;
+                    font-size: $normalSize !important;
+                    font-weight: 500px !important;
+                    text-transform: initial !important;
+                    padding: 0 1rem;
+                    height: 45px;
+                    width: 200px;
+                    color: $white;
+                    @include transition3s(background);
+
+                    &:hover { background-color: rgba($color: $color-blue, $alpha: .9); }
+                }
+            }
+        }
+    }
+
+    &__navbar {
+        animation-name: moveInLeft;
+        animation-duration: .9s;
+        animation-timing-function: ease-out;
+
+        padding: 0 3rem;
+        width: 100%;
+        min-width: 700px;
+        
+        &--navlink {
+            height: 50px;
+            display: flex;
+            list-style: none;
+            align-items: stretch;
+
+            & .navlink--item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $color-blue;
+                cursor: pointer;
+                @include transition2s(color);
+
+                & a { 
+                    color: $color-blue;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+
+                &:not(:last-child) {
+                    width: 90px;
+                    margin-right: 1rem;
+                }
+
+                &:hover {
+                    color: rgba($color: $color-orange, $alpha: 1.0);
+                }
+            }
+        }
+    }
+}

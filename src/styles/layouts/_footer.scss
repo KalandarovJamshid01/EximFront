@@ -1,0 +1,112 @@
+.footer-nav {
+    width: 100%;
+    background-color: $color-blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem .5rem 3rem;
+    @include respond(middle) {
+        display: block;
+    }
+    // position: absolute;
+    // z-index: 999;
+    // bottom: 0;
+    // left: 0;
+
+    &__header {
+        display: flex;
+        align-items: center;
+
+        & .footerbar {
+
+            &__logo {
+                height: 80px; //51
+                width: 155px; //92
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url(../../../public/assets/pictures/EximSoftwareLight.svg);
+                cursor: pointer;
+            }
+
+            &__title {
+                margin-left: .6rem;
+                width: 385px;
+                font-size: $staticSize;
+                text-transform: uppercase;
+                font-weight: $middleWeight;
+                color: $white;
+
+                &--name {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    &__navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        @include respond(middle) {
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-top: 1rem;
+        }
+        
+        &--navlink {
+            height: 50px;
+            display: flex;
+            list-style: none;
+            align-items: stretch;
+
+            & .navlink--item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+                cursor: pointer;
+                @include transition2s(color);
+
+                & a { 
+                    color: $white;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+
+                &:not(:last-child) {
+                    width: 90px;
+                    margin-right: 1rem;
+                }
+
+                &:hover {
+                    color: rgba($color: $color-orange, $alpha: 1.0);
+                }
+            }
+        }
+    }
+
+    &__contacts {
+        // width: 200px;
+        display: flex;
+        align-items: center;
+
+        &--button {
+            padding: .5rem !important;
+            height: 45px;
+            width: 45px;
+            background-color: rgba($color: $white, $alpha: .3) !important;
+
+            & svg { fill: $white; }
+            &:hover { background-color: rgba($color: $white, $alpha: .35) !important; }
+        }
+
+        &--details {
+            margin-left: .5rem;
+            & h5, & h4 { font-weight: $middleWeight; }
+
+            & h5 { color: rgba($color: $white, $alpha: .7) }
+            & h4 { color: $white; }
+        }
+    }
+}

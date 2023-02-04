@@ -1,0 +1,72 @@
+.request-drawer {
+
+    &__navbar {
+        background-color: $color-blue !important;
+        position: relative !important;
+        // position: fixed !important;
+        // top: 0 !important;
+
+        &--title {
+            font-size: $juniorSize;
+            font-weight: $middleWeight;
+        }
+
+        &--close {
+            @include transition4s(background);
+            background-color: rgba($color: $white, $alpha: .1) !important;
+            & svg { fill: $white; }
+            &:hover { background-color: rgba($color: $white, $alpha: .2) !important; }
+        }
+    }
+
+    &__toolbar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    &__bottom-bar {
+        background-color: $white !important;
+        height: 5rem;
+        position: fixed !important;
+        top: auto !important;
+        bottom: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include respond(tablet) {
+            height: fit-content;
+            padding: 0 1rem;
+        }
+    }
+
+    &__actions {
+        width: 100%;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        & button {
+            @include transition3s(background);
+            width: 265px;
+            margin: 0 .5rem;
+            @include respond(tablet) { width: 250px; }
+            height: 45px;
+            text-transform: inherit !important;
+        }
+
+        &--button {
+            border: 1px solid $color-blue !important;
+            background-color: $white !important;
+            color: $color-blue !important;   
+            &:hover { background-color: rgba($color: $color-blue, $alpha: .1) !important; }
+            &.button-blue {
+                background-color: rgba($color: $color-blue, $alpha: 1.0) !important;
+                color: $white !important;
+                border: 0 !important;
+                &:hover { background-color: rgba($color: $color-blue, $alpha: .9) !important; }
+            }
+        }        
+    }
+}

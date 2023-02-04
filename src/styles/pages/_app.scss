@@ -1,0 +1,33 @@
+// APPLICATION STYLES
+.application {
+    // padding-right: 3rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--title {
+            font-weight: $middleWeight;
+            font-size: $middleSize;
+        }
+
+        //application__header--submit
+        &--submit {
+            background-color: #ef7c01 !important;
+            & svg {
+                margin: 0 .2rem;
+                font-size: $normalSize;
+                color: $white !important;
+            }
+        }
+
+        // &--examples {
+        //     background-color: #455674cd !important;
+        //     opacity: .9;
+        //     & svg {
+        //         margin-right: 1rem;
+        //     }
+        // }
+    }
+}

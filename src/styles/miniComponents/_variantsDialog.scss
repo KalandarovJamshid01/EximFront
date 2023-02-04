@@ -1,0 +1,67 @@
+.variant-dialog {
+    @include transition4s(backdrop-filter);
+    @include backdropBlur;
+
+    & .css-1t1j96h-MuiPaper-root-MuiDialog-paper { border-radius: $borderRadius; }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+
+        h4 {
+            text-align: right;
+            font-size: $juniorSize;
+            font-weight: $middleWeight;
+            width: 58%
+        }
+
+        & button {
+            @include transition2s(background);
+            background-color: rgba($color: $color-dark-cancel, $alpha: .15);
+            & svg { fill: $color-dark-cancel; }
+
+            &:hover { background-color: rgba($color: $color-dark-cancel, $alpha: .3);}
+        }
+    }
+
+    &__content {
+        padding: .4rem 1rem 0 1rem !important;
+
+        &--text {
+            font-size: $normalSize;
+            font-weight: $middleWeight;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 100% !important;
+        margin-top: .5rem;
+
+        & button {
+            @include transition4s(background);
+        }
+
+        &--cancel { 
+            background-color: $color-dark-cancel !important; 
+            padding: .8rem 0 !important;
+
+            &:hover { background-color: rgba($color: $color-dark-cancel, $alpha: .9) !important; }
+        }
+        &--close {
+            background-color: $white !important;
+            color: $color-orange !important;
+            border: 2px solid $color-orange !important;
+            padding: .7rem 0 !important;
+            margin-left: 0 !important;
+            margin-top: 5px !important;
+
+            &:hover { border-color: rgba($color: $color-orange, $alpha: .8) !important; }
+        }
+    }
+}

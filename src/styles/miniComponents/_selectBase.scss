@@ -1,0 +1,122 @@
+.selectBase {
+    margin-top: 1rem;
+    display: block;
+
+    &__label {
+        font-size: $normalSize;
+        font-weight: $middleWeight;
+    }
+
+    &__width {
+        margin-top: .4rem;
+        width: 100%;
+        height: 42px;
+        border: 1px solid $color-blue;
+        border-radius: $borderRadius;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .3rem .5rem .3rem 1rem;
+        position: relative !important;
+
+        & div:nth-of-type(1) {
+            width: 95%;
+            z-index: 10;
+            animation: scaleUp .2s;
+            @include respond(tablet) { width: 80%; }
+        }
+
+        & ul { 
+            @include respond(tablet) { margin-left: -1rem; }
+            list-style: none; 
+            border-radius: $borderRadius;
+            border: 1px solid rgba($color: #a0a0a0, $alpha: .1);
+            margin-top: .5rem !important;
+            background-color: $white;
+            box-shadow: .5px .5px 5px 0 rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    &__options {
+        outline: none;
+        border: none;
+        height: 100%;
+        width: 80%;
+        text-align: left;
+        font-size: $normalSize;
+        background: transparent;
+        cursor: pointer;
+        color: #9a9c9c;
+        &--selected {
+            color: $color-black;
+        }
+        
+
+        &--select {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: .5rem;
+            font-size: $normalSize;
+            cursor: pointer;
+            @include transition4s(background);
+
+            &.item-disabled {
+                display: none !important;
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($color: #a0a0a0, $alpha: .1);
+            }
+
+            &:nth-child(2) {
+                border-top-left-radius: $borderRadius;
+                border-top-right-radius: $borderRadius;
+            }
+
+            &:last-child {
+                border-bottom-left-radius: $borderRadius;
+                border-bottom-right-radius: $borderRadius;
+            }
+
+            &:hover { background-color: rgba($color: #a0a0a0, $alpha: .1); }
+            &:active { background-color: rgba($color: #a0a0a0, $alpha: .15); }
+        }
+
+        &--button {
+            box-shadow: none !important;
+            cursor: pointer;
+            background-color: rgba($color: $color-blue, $alpha: .05) !important;
+            height: 2.5rem !important;
+            width: 2.5rem !important;
+            border-radius: 50% !important;
+            z-index: initial !important;
+            @include transition2s(background);
+
+            & label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            &:hover { background-color: rgba($color: $color-blue, $alpha: .1) !important; }
+            &:active { background-color: rgba($color: $color-blue, $alpha: .15) !important; }
+
+            & svg {
+                fill: #757575;
+            }
+        }
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1 !important;
+    }
+}

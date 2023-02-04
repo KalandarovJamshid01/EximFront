@@ -1,0 +1,81 @@
+.form-dialog {
+    @include transition4s(backdrop-filter);
+    @include backdropBlur;
+
+    .css-1t1j96h-MuiPaper-root-MuiDialog-paper { border-radius: $borderRadius; }
+
+    &__nav {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: .5rem .5rem 0 0;
+
+        & button {
+            @include transition3s(background);
+            background-color: rgba($color: $color-red, $alpha: .1);
+
+            & svg { fill: $color-red }
+            &:hover { background-color: rgba($color: $color-red, $alpha: .2); }
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: stretch;
+
+        &--icon {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            padding: 0 1rem;
+
+            & button {
+                @include transition3s(background);
+                background-color: rgba($color: $color-red, $alpha: .1);
+                border-radius: $borderRadius;
+                padding: 1rem;
+
+                & svg { font-size: 30px; fill: $color-red; }
+
+                &:hover { background-color: rgba($color: $color-red, $alpha: .2); }
+            }
+        }
+
+        &--message {
+
+            & .noti-message--title {
+                color: $color-red;
+                font-size: $juniorSize;
+                font-weight: $middleWeight;
+            }
+        }
+    }
+
+    &__content {
+        &--input {
+            background-color: rgba($color: $color-red, $alpha: .1);
+            & label { font-size: $staticSize !important; }
+            & textarea {
+                font-size: $normalSize !important;
+                font-weight: $middleWeight !important;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: 1rem;
+
+        & button { padding: .8rem 0 !important; }
+
+        &--button { background-color: $color-dark-cancel !important; }
+        &--button-outlined {
+            background-color: $white !important;
+            color: $color-orange !important;
+            border: 1px solid $color-orange !important;
+        }
+    }
+}

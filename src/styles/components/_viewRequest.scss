@@ -1,0 +1,84 @@
+.request-drawer__content {
+    margin-top: 2rem;
+    height: 100%;
+
+    &--form-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4rem;
+        margin-top: .5rem;
+        @include respond(tablet) {
+            display: block;
+            margin-top: 0;
+        }
+
+        .form-container {
+            display: flex;
+            align-items: flex-start;
+            // border-bottom: 1px solid #d3d8de; DEFAULT
+            border-bottom: 1px solid rgba($color: $color-orange, $alpha: .1);
+            width: 30%;
+            @include respond(tablet) { 
+                width: 100%; 
+                margin-top: 1rem;
+            }
+            flex-direction: column;
+            // justify-content: space-between;
+
+            &__label {
+                font-size: calc($normalSize - 1px);
+                font-weight: $middleWeight;
+            }
+
+            &__value {
+                font-size: $juniorSize;
+                font-weight: $middleWeight;
+                color: $color-blue;
+                padding: .8rem 0;
+                width: 100%;
+
+                &--name {
+                    background-color: #d3d8de;
+                    width: fit-content;
+                }
+            }
+
+            &__details {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+
+
+                & button {
+                    background-color: rgba($color: $color-orange, $alpha: .2);
+                    & svg { fill: $color-orange; }
+                }
+            }
+
+            &.no-border {
+                border: 0;
+            }
+
+            &__input {
+
+                & label {
+                    font-size: $normalSize;
+                    color: $color-orange;
+                }
+                & textarea {
+                    font-size: $normalSize;
+                    color: $color-blue !important;
+                }
+
+                & div {
+                    background-color: rgba($color: $color-orange, $alpha: .1);
+
+                    &::before { border-color: $color-orange; }
+                    &::after { border-color: $color-orange; }
+                }
+            }
+        }
+    }
+}

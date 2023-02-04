@@ -1,0 +1,43 @@
+// --- PROJECT MAIN MIXINS AND VARIABLES
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// --- PROJECT BASE STYLES ---
+@import 'base/base';
+@import 'base/utilities';
+@import 'base/animations';
+
+// --- LAYOUTS STYLES ---
+@import 'layouts/header';
+@import 'layouts/panel';
+@import 'layouts/footer';
+@import 'layouts/navbar';
+
+// --- MINI COMPONENTS ---
+
+// DIALOG STYLES
+@import 'miniComponents/scrollableDialog.scss';
+@import 'miniComponents/variantsDialog';
+@import 'miniComponents/notificationDialog';
+@import 'miniComponents/formDialog';
+// SELECTION SYSTEM BASE STYLES
+@import 'miniComponents/upload';
+@import 'miniComponents/selectBase';
+@import 'miniComponents/choice';
+@import 'miniComponents/snackbar';
+
+// --- COMPONENTS THAT THEY ARE ECO ---
+@import 'components/drawer';
+@import 'components/application';
+@import 'components/applicationDrawer';
+@import 'components/requestDrawer';
+@import 'components/viewSubmit';
+@import 'components/viewRequest';
+
+// --- MAIN PAGE COMPONENTS ---
+@import 'pages/app';
+@import 'pages/home';
+@import 'pages/auth.scss';
+@import 'pages/userAuth';
+@import 'pages/register';
+@import 'pages/requests';

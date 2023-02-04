@@ -1,0 +1,84 @@
+.header-notification {
+    @include transition3s(backdrop-filter);
+    @include backdropBlur;
+
+    & .MuiDialog-paperScrollPaper {
+        border-radius: $borderRadius;
+        width: 600px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+
+        & h4 {
+            font-size: $juniorSize;
+            font-weight: $middleWeight;
+        }
+
+        & button {
+            @include transition3s(background);
+            background-color: rgba($color: $color-orange, $alpha: .1);
+            & svg { fill: $color-orange; }
+            &:hover { background-color: rgba($color: $color-orange, $alpha: .2); }
+        }
+    }
+
+    &__content {
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+        padding: 0 !important;
+    }
+
+    &__modal {
+        margin: 0 1rem;
+        border-top: 1px solid #ededee;
+        &--list {
+            margin-top: 1rem;
+            border-left: 4px solid transparent;
+            border-radius: 5px;
+            padding-left: .5rem;
+
+            &.warning { border-color: $color-orange; }
+            &.success { border-color: $color-success; }
+            &.danger { border-color: $color-red; }
+            &.default { border-color: $color-blue; }
+
+            & .modal-list {
+
+                &__infos {
+                    display: flex;
+                    align-items: flex-end;
+                    padding: .5rem 0;
+                    justify-content: space-between;
+
+                    &--name {
+                        font-size: $juniorSize;
+                        font-weight: $middleWeight;
+                    }
+
+                    &--date {
+                        font-size: $normalSize;
+                        font-weight: $middleWeight;
+                    }
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    &__options {
+        display: block !important;
+        
+        &--button {
+            padding: .8rem 0 !important;
+            width: 100%;
+            background-color: $color-orange !important;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.noti-dialog {
+    @include transition4s(backdrop-filter);
+    @include backdropBlur;
+
+    .css-1t1j96h-MuiPaper-root-MuiDialog-paper { border-radius: $borderRadius; }
+
+    &__nav {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: .5rem .5rem 0 0;
+
+        & button {
+            @include transition3s(background);
+            background-color: rgba($color: $color-blue, $alpha: .1);
+
+            & svg { fill: $color-blue; }
+            &:hover { background-color: rgba($color: $color-blue, $alpha: .2); }
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: stretch;
+
+        &--icon {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            padding: 0 1rem;
+
+            & button {
+                @include transition3s(background);
+                background-color: rgba($color: $color-blue, $alpha: .1);
+                border-radius: $borderRadius;
+                padding: 1rem;
+
+                & svg { font-size: 30px; fill: $color-blue; }
+
+                &:hover { background-color: rgba($color: $color-blue, $alpha: .2); }
+            }
+        }
+
+        &--message {
+
+            & .noti-message--title {
+                color: $color-blue;
+                font-size: $juniorSize;
+                font-weight: $middleWeight;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: 1rem;
+
+        & button { padding: .8rem 0 !important; }
+
+        &--button { background-color: $color-blue !important; }
+        &--button-outlined {
+            background-color: $white !important;
+            color: $color-blue !important;
+            border: 1px solid $color-blue !important;
+        }
+    }
+}

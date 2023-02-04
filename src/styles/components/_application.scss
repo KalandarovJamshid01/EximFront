@@ -1,0 +1,193 @@
+.application {
+
+    // SUBMITS STYLES
+    &__submits {
+        display: block !important;
+        margin-top: 15px !important;
+        background-color: $white !important;
+        border-radius: $borderRadius !important;
+        padding: 1.5rem !important;
+        //@include transitionAll4s();
+        text-align: initial !important;
+        @include transition4s(height);
+
+        &.submits-open {
+            box-shadow: 3px 3px 18px -10px rgba(0, 0, 0, 0.15);
+    
+            & .response__preview {
+                transition: opacity ease .6s;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    // REQUESTS STYLES
+    &__request {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        &--info {
+    
+            & .submission-info {
+                font-size: $juniorSize;
+                font-weight: $lighterWeight;
+
+                &__id {
+                    text-transform: uppercase;
+                    font-weight: $middleWeight;
+                }
+
+                &__name {
+                    color: $color-blue;
+                    font-weight: $middleWeight;
+                }
+            }
+    
+            & .submission-date {
+                margin-top: .5rem;
+                font-size: $normalSize;
+            }
+        }
+        
+        &--status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & .status-view-button {
+                @include transition3s(background);
+                position: relative;
+                background-color: #ececec;
+                color: $color-black !important;
+                &:hover { background-color: rgba($color: #ececec, $alpha: .8) !important; }
+                &::before {
+                    left: 8%;
+                    content: "";
+                    height: 1rem;
+                    width: 1rem;
+                    border-radius: 50%;
+                    position: absolute;
+                    background-color: $color-gray;
+                }
+
+                &.circle {
+                    &--waiting::before { background-color: $color-gray; }
+                    &--in-process::before { background-color: $color-yellow; }
+                    &--warning::before { background-color: $color-orange-2; }
+                    &--warning-checking::before { background-color: $color-blue-light; }
+                    &--preparation::before { background-color: $color-done; }
+                    &--payment-in-process::before { background-color: $color-cyan; }
+                    &--success::before { background-color: $color-success; }
+                    
+                    &--closed { 
+                        background-color: $color-red; 
+                        &::before { background-color: $color-red; }
+                        color: $white !important;
+                        &:hover { background-color: rgba($color: $color-red, $alpha: .9) !important; }
+                    }
+
+                    &--dark-success {
+                        background-color: $color-success-dark;
+                        &::before { background-color: $color-success-dark; }
+                        color: $white !important;
+                        &:hover { background-color: rgba($color: $color-success-dark, $alpha: .9) !important; }
+                    }
+                }
+            }
+
+            & .status-button {
+                &, &:hover { background-color: #f9f9f9; }
+                & svg { color: #a0a0a0; }
+                min-width: 40px !important;
+                width: 40px;
+                height: 40px;
+                min-width: 50px;
+                margin-left: 1rem;
+                padding: .7rem 0 !important;
+                @include transition4s(transform);
+
+                &-rotating {
+                    transform: rotate(-180deg);
+                }
+    
+                // &--danger { background-color: #840100 !important; }
+                // &--warning { background-color: #f39d18 !important; }
+                // &--success { background-color: #53b436 !important; }
+                // &--failed, &--waiting {
+                //     background-color: #e7ebee;
+                //     color: #383839 !important;
+                // }
+            }
+        }
+    }
+}
+
+//DROPDOWNMENU STYLES
+.response__preview {
+    opacity: 0;
+    visibility: hidden;
+    font-size: $juniorSize;
+    font-weight: $lighterWeight;
+    // @include transition4s(opacity)
+    transition: all ease .5s;
+
+    &--response, &--comment {
+        background-color: #f9f9f9;
+        padding: 1rem;
+        border-radius: $borderRadius;
+        margin-top: .5rem;
+
+        & h3, & li, & p {
+            font-size: $staticSize;
+            font-weight: $middleWeight; 
+        }
+    }
+
+    &--response {
+        // RESPONSE RESPONSE
+        & .response-alert, & .response-comment {
+            font-size: $staticSize;
+            font-weight: $middleWeight; 
+
+            &::before {
+                content: "";
+                height: 12px;
+                width: 12px;
+                display: inline-block;
+                border-radius: 50%;
+                margin-right: 5px;
+            }
+
+            &.waiting::before { background-color: $color-gray; }
+            &.in-process::before { background-color: $color-yellow; }
+            &.warning::before { background-color: $color-orange-2; }
+            &.warning-checking::before { background-color: $color-blue-light; }
+            &.preparation::before { background-color: $color-done; }
+            &.payment-in-process::before { background-color: $color-cyan; }
+            &.closed::before { background-color: $color-red; }
+            &.success::before { background-color: $color-success; }
+            
+            &--warnings {
+                list-style: none;
+    
+                & li {
+                    margin-top: .5rem;
+                }
+    
+                & .warning-subtitle {
+                    color: #000;
+                }
+            }
+        }
+    }
+    // RESPONSE COMMENT
+    &--comment {
+        & .response-comment {
+            &--message {
+                margin-top: 5px;
+            }
+        }
+    }
+}

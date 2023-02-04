@@ -1,0 +1,486 @@
+.home {
+    // background-color: lightcyan;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #f1f5f9;
+
+    &__section {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin-top: 9rem;
+        height: 82vh;
+
+        &--intro {
+
+            background-image: url(../../../public/assets/pictures/SectionIntro.png);
+            height: 555px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 100%;
+            position: relative;
+
+            & .section__intro {
+                animation-name: moveInLeft;
+                animation-duration: .9s;
+                animation-timing-function: ease-out;
+                
+                position: absolute;
+                top: 150px;
+                width: 550px;
+                left: 60px;
+
+                & h3 {
+                    &::first-letter { font-size: 45px; }
+                    color: $color-orange;
+                    font-size: 35px;
+                    font-weight: 800;  
+                    text-transform: uppercase; 
+                    
+                    & span {
+                        color: transparent;
+                        background-image: linear-gradient(164deg, $white, $color-blue);
+                        color: transparent;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                    }
+                }
+
+                p {
+                    margin-top: .7rem;
+                    color: $white;
+                    font-size: $juniorSize;
+                }
+
+                &--details {
+                    margin-top: 1.2rem;
+
+                    & button {
+                        @include transition3s(background);
+                        height: 45px;
+                        background-color: $white;
+                        font-size: $normalSize !important;
+                        text-transform: initial;
+                        width: 200px;
+                        color: $color-blue;
+                        border-radius: $borderRadius;
+                        &:hover { background-color: rgba($color: $white, $alpha: .9); }
+                        &:active { background-color: rgba($color: $white, $alpha: 1); }
+
+                        &.outline {
+                            border: 1px solid $white;
+                            background-color: transparent;
+                            color: $white;
+                            &:hover { background-color: rgba($color: $white, $alpha: .2); }
+                            &:active { background-color: rgba($color: $white, $alpha: .3); }
+                        }
+
+                        &:not(:last-child) {
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--about {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            & .about-section__fields {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                animation-name: moveInBottom;
+                animation-duration: .9s;
+                animation-timing-function: ease-out;
+
+                & h3 {
+                    text-align: center;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: $color-orange;
+                }
+    
+                & h4 {
+                    margin-top: 1rem;
+                    text-align: center;
+                    font-weight: $middleWeight;
+                    color: $color-blue;
+                }
+    
+                ul {
+                    margin-top: 1rem;
+                    list-style: none;
+                    li {
+                        text-align: center;
+                        font-size: $normalSize;
+                        font-weight: $middleWeight;
+                    }
+                }
+
+                & button {
+                    width: 200px;
+                    height: 49px;
+                    border: 0 !important;
+                }
+            }
+
+            & .grid-images {
+                animation-name: moveInLeft;
+                animation-duration: .9s;
+                animation-timing-function: ease-out;
+                
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 1088px;
+                margin: 0 auto;
+                margin-top: 2rem;
+                @include respond(tablet) {
+                    flex-direction: column;
+                    width: 600px;
+                }
+
+                &--left {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 350px;
+                }
+
+                &--center {
+                    width: 544px;
+                    height: 350px;
+                }
+
+                &--right {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 350px;
+                }
+
+                @include respond(tablet) {
+                    &--right, &--left {
+                        flex-direction: row;
+                        width: 90%;
+                        height: 200px;
+                    }
+                }
+
+                &__image {
+                    &--center {
+                        height: 100%;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 100%;
+                        background-image: url(../../../public/assets/pictures/home/EximERP.png);
+                    }
+
+                    &--mini {
+                        width: 262px;
+                        height: 170px;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 100%;
+
+                        &.one {
+                            background-image: url(../../../public/assets/pictures/home/PicLeftTop.png);
+                        }
+                        &.two {
+                            background-image: url(../../../public/assets/pictures/home/PicLeftBottom.png);
+                        }
+                        &.four {
+                            background-image: url(../../../public/assets/pictures/home/PicRightTop.png);
+                        }
+                        &.five {
+                            background-image: url(../../../public/assets/pictures/home/PicRightBottom.png);
+                        }
+                    }
+                }
+            }
+        }
+
+        &--partners {
+            background-color: #E8ECF0;
+            // height: 185px;
+            padding-bottom: 2.5rem;
+
+            animation-name: moveInRight;
+            animation-duration: .9s;
+            animation-timing-function: ease-out;
+
+            & h3 {
+                font-size: 24px;
+                font-weight: 500;
+                text-align: center;
+                padding-top: 1.5rem;
+                color: $color-blue;
+            }
+
+            & .partners {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 750px;
+                margin: 0 auto;
+                margin-top: 1.5rem;
+                @include respond(tablet) {
+                    flex-direction: column;
+                    &--logo:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                &--logo {
+                    background-color: $white;
+                    width: 240px;
+                    height: 80px;
+                    position: relative;
+                    border-radius: $borderRadius;
+                    cursor: pointer;
+
+                    &::before {
+                        width: 180px;
+                        display: flex;
+                        content: "";
+                        position: absolute;
+                        background-repeat: no-repeat;
+                        background-position: 100%;
+                        background-size: contain;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        height: 100px;
+                    }
+
+                    &.one::before { background-image: url(../../../public/assets/pictures/AsyCuda.png); }
+                    &.two::before { 
+                        height: 100px;
+                        background-image: url(../../../public/assets/pictures/USACBP.png); 
+                    }
+                    &.three {
+                        background-color: #008bd4;
+                        &::before { 
+                            background-image: url(../../../public/assets/pictures/CupiaLogoWhite.png); 
+                            width: 110px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--contacts {
+            animation-name: moveInBottom;
+            animation-duration: .9s;
+            animation-timing-function: ease-out;
+
+            background-color: $white;
+            padding: 4rem 0;
+        
+            & .section-contacts {
+                width: 1088px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+                @include respond(middle) {
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+
+                &__infos {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    @include respond(middle) {
+                        align-items: center;
+                        justify-content: center;
+                    }
+                
+                    & h3 {
+                        color: $color-orange;
+                        font-size: 24px;
+                        font-weight: 500;
+                        margin-top: 1rem;
+                        padding-bottom: .5rem;
+                        border-bottom: 1px solid rgba($color: $color-orange, $alpha: .2);
+                        width: 100%;
+                    }
+    
+                    & ul {
+                        margin-top: 1rem;
+                        list-style: none;
+                        
+                        & li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            & h4 {
+                                color: $color-blue;
+                                font-size: $normalSize;
+                                font-weight: $middleWeight;
+                            }
+
+                            & button {
+                                margin-right: 1rem;
+                                background-color: rgba($color: $color-orange, $alpha: .1);
+                                & svg { fill: $color-blue; }
+                            }
+
+                            & a { 
+                                text-decoration: none;
+                                color: $color-blue;
+                                font-size: $normalSize;
+                            }
+
+                            &:not(:last-child) {
+                                margin-bottom: .5rem;
+                            }
+                        }
+                    }
+                }
+
+                &__logo {
+                    background-image: url(../../../public/assets/pictures/EximSoftware.svg);
+                    width: 220px;
+                    height: 125px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: 100%;
+                }
+
+                &__map {
+                    height: 425px;
+                    width: 439px;
+                    border-radius: $borderRadius;
+                    border: 1px solid rgba($color: $color-orange, $alpha: .2);
+                    @include respond(middle) { margin-top: 1rem; }
+                }
+            }
+        }
+
+        &--sharing-news {
+
+            & .sharing-new {
+                width: 850px;
+                margin: 1rem auto;
+                @include respond(tablet) {
+                    width: 600px;
+                }
+
+                &__header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding-bottom: 1.2rem;
+
+                    & h3 {
+                        font-weight: $middleWeight;
+                        font-size: 24px;
+                        color: $color-blue;
+                        width: 60%;
+                        text-align: right;
+                    }
+
+                    & h5 {
+                        margin-left: auto;
+                        font-weight: $middleWeight;
+                        color: $color-orange;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        & svg { padding: .2rem; }
+                        cursor: pointer;
+                        &:hover { color: rgba($color: $color-orange, $alpha: .8); }
+                    }
+                }
+
+                &__content {
+                    background-color: $white;
+                    border-radius: $borderRadius;
+                    display: flex;
+
+                    &--box {
+                        display: flex;
+                        align-items: center;
+                        // height: 100px;
+                        padding: .6rem;
+
+                        & .content-box {
+
+                            &__form {
+                                display: flex;
+                                align-items: center;
+                                flex-direction: column;
+                                justify-content: space-evenly;
+                                height: 135px;
+                                padding-left: 1rem;
+
+                                & h4 {
+                                    font-weight: $middleWeight;
+                                    font-size: $juniorSize;
+                                    color: $color-blue;
+                                }
+
+                                & p {
+                                    margin-top: .2rem;
+                                    font-size: $staticSize;
+                                    font-weight: $middleWeight;
+                                }
+                            }
+
+                            &__image {
+                                width: 227px;
+                                height: 135px;
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                background-position: 100%;
+                                @include respond(tablet) { display: none; }
+
+                                &.one { background-image: url(../../../public/assets/pictures/home/UzBorder.png); }
+                                &.two { background-image: url(../../../public/assets/pictures/home/Customs.png); }
+                                &.three { background-image: url(../../../public/assets/pictures/home/People.png); }
+                            }
+                        }
+                    }
+
+                    &--details {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        .sharing-details {
+                            & button {
+                                @include transition3s(background);
+                                background-color: rgba($color: $color-blue, $alpha: .2);
+                                & svg { fill: $color-blue; }
+
+                                &.light { background-color: rgba($color: $color-blue, $alpha: .1); }
+
+                                &:not(:last-child) { margin-right: .5rem; }
+                                &:hover { background-color: rgba($color: $color-blue, $alpha: .4);}
+                            }
+                        }
+                    }
+
+                    &:not(:last-child) { margin-bottom: 1rem; }
+                }
+            }
+        }
+    }
+}
