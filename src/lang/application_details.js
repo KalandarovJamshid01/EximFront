@@ -30,7 +30,7 @@ const words = {
     Thanks: "Здравствуйте!",
     Data: "Заявка №23141 от 29.12.2022 в 14:40:32 была успешно проверена на наличие документов и передана декларанту для оценки стоимости работ. Пожалуйста, ожидайте",
   },
-  russian: {
+  uzbek: {
     Make_copy: "Nusxasini yaratish",
     Verify_doc: "Hujjatlarni tekshirish",
     Responsible: "Mas'ul:",
