@@ -50,8 +50,7 @@ const words = {
     Verification_doc: "Проверка документов",
     Payment_made: "Оплата произведена",
     Wait_client_confirmation: "Ожидание подтверждения клиентом",
-    Enter: "Войти",
-    Enter: "Войти",
+ 
   },
   spanish: {
     signIn: "Registrarse",
