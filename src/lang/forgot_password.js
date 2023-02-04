@@ -13,10 +13,12 @@ const words = {
     Enter_your_email: "Введите ваше e-mail...",
     Restore: "Восстановить",
   },
-  spanish: {
-    signIn: "Registrarse",
-    email: "Correo Electrónico",
-    password: "Contraseña",
-    remember: "Recuérdame",
+  uzbek: {
+    Password_recovery: "Parolni tiklash",
+    Enter_email_for_new_passsword:
+      "Amaldagi  elektron pochta manzilini kiriting, unga yangi parolingiz yuboriladi",
+    Email: "Email",
+    Enter_your_email: "Elektron pochtangizni kiriting...",
+    Restore: "Qayta tiklash",
   },
 };
