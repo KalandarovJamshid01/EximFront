@@ -6,6 +6,7 @@ const words = {
     remember: "Remember Me",
   },
   russian: {
+    entrance: "Вход",
     Your_login: "Ваш логин",
     Enter_login: "Введите логин...",
     Password: "Пароль:",
@@ -13,10 +14,13 @@ const words = {
     Enter: "Войти",
     Forgot_password: "Забыли пароль?",
   },
-  spanish: {
-    signIn: "Registrarse",
-    email: "Correo Electrónico",
-    password: "Contraseña",
-    remember: "Recuérdame",
+  uzbek: {
+    entrance: "Kirish",
+    Your_login: "Sizning loginingiz",
+    Enter_login: "Loginni kiriting...",
+    Password: "Parol:",
+    Enter_your_password: "Parolingizni kiriting...",
+    Enter: "Kirish",
+    Forgot_password: "Parolni unutdingizmi?",
   },
 };
