@@ -19,6 +19,8 @@ export default function ViewRequestApplication({ application }) {
 
   const socket = useRef();
 
+  
+
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.emit("addUser", user.id);
@@ -61,7 +63,7 @@ export default function ViewRequestApplication({ application }) {
           header: "Bu header",
           body: "Bu body",
           header: "Bu header",
-          body: "Bu body",
+          status: "Bu body",
         };
         break;
       case 2:
@@ -142,6 +144,7 @@ export default function ViewRequestApplication({ application }) {
           documentId: application._id,
           header: "Bu header",
           body: "Bu body",
+          status:200
         };
         break;
       default:
